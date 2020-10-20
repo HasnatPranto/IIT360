@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIT360_api", "IIT360_api.csproj", "{FB38BBA2-33F1-4F71-94CB-580F6BD54AF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB38BBA2-33F1-4F71-94CB-580F6BD54AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB38BBA2-33F1-4F71-94CB-580F6BD54AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB38BBA2-33F1-4F71-94CB-580F6BD54AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB38BBA2-33F1-4F71-94CB-580F6BD54AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EFE9785-7B9A-44A6-895C-5DF0BBE97F60}
+	EndGlobalSection
+EndGlobal
