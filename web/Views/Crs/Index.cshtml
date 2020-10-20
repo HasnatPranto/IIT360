@@ -1,0 +1,41 @@
+﻿@model IEnumerable<IIT360_Web.Models.Cr>
+
+@{
+    ViewData["Title"] = "CR";
+}
+
+<h1>CR</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CrMailId);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.CrMailId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CrMailId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CrMailId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CrMailId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

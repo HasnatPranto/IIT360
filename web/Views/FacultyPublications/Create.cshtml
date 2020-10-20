@@ -1,0 +1,36 @@
+﻿@model IIT360_Web.Models.FacultyPublication
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FacultyPublication</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FkFacultyFacpub" class="control-label"></label>
+                <select asp-for="FkFacultyFacpub" class ="form-control" asp-items="ViewBag.FkFacultyFacpub"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkPublicationFacpub" class="control-label"></label>
+                <select asp-for="FkPublicationFacpub" class ="form-control" asp-items="ViewBag.FkPublicationFacpub"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

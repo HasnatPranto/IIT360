@@ -1,0 +1,42 @@
+﻿@model IIT360_Web.Models.Academic
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Academic</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AcademicSection)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcademicSection)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Programs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Programs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AcademicInfo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcademicInfo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AcademicAdmission)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcademicAdmission)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AcademicId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

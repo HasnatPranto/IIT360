@@ -1,0 +1,48 @@
+﻿@model IEnumerable<IIT360_Web.Models.Instructor>
+
+@{
+    ViewData["Title"] = "Instructor";
+}
+
+<h1>Instructor</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorMail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InstructorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InstructorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InstructorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

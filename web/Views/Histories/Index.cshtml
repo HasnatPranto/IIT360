@@ -1,0 +1,61 @@
+﻿@model IEnumerable<IIT360_Web.Models.History>
+
+@{
+    ViewData["Title"] = "History";
+}
+
+<h1>History</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div style="overflow-x:auto">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HeadingText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DirectorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RohTable)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.HeadingText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirectorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RohTable)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HistoryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HistoryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HistoryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>

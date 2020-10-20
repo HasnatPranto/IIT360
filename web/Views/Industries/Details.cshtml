@@ -1,0 +1,42 @@
+﻿@model IIT360_Web.Models.Industry
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Industry</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Featured)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Featured)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IndustryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IndustryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IndLink)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IndLink)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IndIconNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IndIconNavigation.ImgName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IndustryId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

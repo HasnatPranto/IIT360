@@ -1,0 +1,44 @@
+﻿@model IIT360_Web.Models.AcademicDocument
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AcademicDocument</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AcDocId" />
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkAcademicAcdoc" class="control-label"></label>
+                <select asp-for="FkAcademicAcdoc" class="form-control" asp-items="ViewBag.FkAcademicAcdoc"></select>
+                <span asp-validation-for="FkAcademicAcdoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkDocumentAcdoc" class="control-label"></label>
+                <select asp-for="FkDocumentAcdoc" class="form-control" asp-items="ViewBag.FkDocumentAcdoc"></select>
+                <span asp-validation-for="FkDocumentAcdoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

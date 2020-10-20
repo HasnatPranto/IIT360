@@ -1,0 +1,55 @@
+﻿@model IEnumerable<IIT360_Web.Models.Industry>
+
+@{
+    ViewData["Title"] = "Industry";
+}
+
+<h1>Industry</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div style="overflow-x:auto">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Featured)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndustryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndIcon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.Featured)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndustryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndIcon)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IndustryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IndustryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IndustryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<IIT360_Web.Models.EventImage>
+
+@{
+    ViewData["Title"] = "Event-Images";
+}
+
+<h1>Event-Images</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Caption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkEventEvemgeNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkImageEvemgeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.Caption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkEventEvemgeNavigation.EventId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkImageEvemgeNavigation.ImgName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdeventImage">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdeventImage">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdeventImage">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

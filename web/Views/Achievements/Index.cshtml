@@ -1,0 +1,67 @@
+﻿@model IEnumerable<IIT360_Web.Models.Achievement>
+
+@{
+    ViewData["Title"] = "Achievement";
+}
+
+<h1>Achievements</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div style="overflow-x:auto">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Venue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageCaption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkAchievementImageNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Venue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageCaption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkAchievementImageNavigation.ImgName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AchievementId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AchievementId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AchievementId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>

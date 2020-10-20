@@ -1,0 +1,68 @@
+﻿@model IEnumerable<IIT360_Web.Models.Academic>
+
+@{
+    ViewData["Title"] = "Academic";
+}
+
+<h1>Academic</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<style>
+   
+</style>
+<table class="table table-hover table-dark" id="aca">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AcademicSection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcademicInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcademicAdmission)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-hover table-dark">
+                <td>
+                    @Html.DisplayFor(modelItem => item.AcademicSection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Programs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AcademicInfo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AcademicAdmission)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AcademicId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AcademicId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AcademicId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts{
+
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script>
+			$(document).ready(function () {
+				$("#aca").floatingScroll();
+			})
+    </script>
+
+}
+

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<IIT360_Web.Models.Iitian>
+
+@{
+    ViewData["Title"] = "IITians";
+}
+
+<h1>IITians</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div style="overflow-x:auto">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IitianName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IitianMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemesterCi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Connected)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.IitianName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IitianMail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemesterCi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Connected)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IitianMail">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IitianMail">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IitianMail">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
