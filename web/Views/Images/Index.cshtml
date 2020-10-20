@@ -1,0 +1,56 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<IIT360_Web.Models.Image>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, ReflectionIT.Mvc.Paging
+
+@{
+    ViewData["Title"] = "Images";
+}
+
+<h1>Images</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-dark table-hover">
+                <td>
+                    @if (item.Img != null)
+                    {
+                        <img src="data:image;base64,@System.Convert.ToBase64String(item.Img)" height="100" width="100" />
+                    }
+                    else
+                    {
+                        @Html.DisplayText("No File")
+                    }
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ImageId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ImageId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ImageId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav aria-label="faculty">
+    <vc:pager paging-list="@Model"></vc:pager>
+</nav>
