@@ -1,0 +1,41 @@
+﻿@model IEnumerable<IIT360_Web.Models.PublicationDocument>
+
+@{
+    ViewData["Title"] = "Publication-Document";
+}
+
+<h1>Publication-Document</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FkDocumentPubdocNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkPublicationPubdocNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.FkDocumentPubdocNavigation.DocumentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkPublicationPubdocNavigation.PublicationId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PubDocId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PubDocId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PubDocId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

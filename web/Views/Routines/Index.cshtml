@@ -1,0 +1,73 @@
+﻿@model IEnumerable<IIT360_Web.Models.Routine>
+
+@{
+    ViewData["Title"] = "Routine";
+}
+
+<h1>Routine</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div style="overflow-x:auto">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeginTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dayname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkInstructor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeginTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dayname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkInstructor.InstructorId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RoutineId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RoutineId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RoutineId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IIT360_Web.Models.Researcharea>
+
+@{
+    ViewData["Title"] = "Research Area";
+}
+
+<h1>Research Area</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div style="overflow-x:hidden">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FieldName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-dark table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.FieldName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaDescription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ResearchAreaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ResearchAreaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ResearchAreaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
